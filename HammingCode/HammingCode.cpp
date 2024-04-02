@@ -1,5 +1,4 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 #include <bitset>
 
 std::bitset<8> encode_Hamming(std::bitset<4> part)
