@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Decode_Hamming.cpp" />
+    <ClCompile Include="Encode_Hamming.cpp" />
     <ClCompile Include="HammingCode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
