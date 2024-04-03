@@ -36,7 +36,7 @@ std::bitset<8> encode_Hamming(std::bitset<4> part)
 }
 
 
-std::bitset<16> Func_1(char sym)
+int Func_1(char sym)
 {
     std::bitset<8> bits(sym);
     std::bitset<16> encoded;
@@ -51,5 +51,7 @@ std::bitset<16> Func_1(char sym)
 
     encoded |= encodedSecondPart.to_ulong();
 
-    return encoded;
+    int value = static_cast<int>(encoded.to_ulong());
+
+    return value;
 }

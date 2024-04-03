@@ -2,22 +2,38 @@
 #include <bitset>
 #include "Encode_Hamming.cpp"
 #include "Decode_Hamming.cpp"
+#include <gtest/gtest.h>
+
+TEST(Test, Test1) 
+{
+	int q = 4;
+	int Hamming = 5476;
+
+	ASSERT_EQ(Hamming, Func_1(q));
+}
+
+
+TEST(Test, Test2) 
+{
+	int encoded = 5476;
+
+	ASSERT_EQ(4, Func_2(encoded));
+}
+
+TEST(Test, Test3)
+{
+	int encoded = 5476;
+	int err = -1;
+	std::pair<int, int> q = { Func_2(encoded), -1 };
+	ASSERT_EQ(err, q.second);
+}
+
 
 int main()
 {
-    int n;
-    std::cin >> n;
+    testing::InitGoogleTest();
 
-    std::bitset<8> tmp(n);
-    std::bitset<16> encoded_value = Func_1(n);
-
-    int value = static_cast<int>(encoded_value.to_ulong());
-
-	std::cout << n << " = " << tmp << "\n";
-    std::cout << "Encoded: " << encoded_value << "  (" << value << ")" << "\n";
-
-	int hamming = value;
-	std::cout << "Decoded: " << Func_2(hamming) << "\n";
+    return RUN_ALL_TESTS();
 	
 
     return 0;
