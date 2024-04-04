@@ -22,10 +22,10 @@ TEST(Test, Test2)
 
 TEST(Test, Test3)
 {
-	int encoded = 5476;
+	int encoded = 5486;
 	int err = -1;
-	std::pair<int, int> q = { Func_2(encoded), -1 };
-	ASSERT_EQ(err, q.second);
+	int q = Func_2(encoded);
+	ASSERT_EQ(err, q);
 }
 
 
